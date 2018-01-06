@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,400,500');
+/* ==========================================================================
+  Basic CSS styles
+  ========================================================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-size: 12px;
+  background-color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ==========================================================================
+  Helper classes
+  ========================================================================== */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Clearfix
+* Adding a 'clearfix' class will allow parent elements to contain a floated child element
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+  Custom CSS styles
+  ========================================================================== */
+
+/*--------------------------*\
+      header
+\*--------------------------*/
+.header {
+  width: 100%;
+  height: 56px;
+  background-color: #14E3FF;
+  box-shadow: 0px 4px 8px rgba(17, 17, 17, .1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-weight: 500;
+}
+
+.header .logo {
+  font-size: 16px;
+  font-weight: 200;
+  color: #FFFFFF;
+  height: 100%;
+  line-height: 56px;
+  margin-left: 30px;
+}
+
+.header .logo span {
+}
+
+/*--------------------------*\
+      nav
+\*--------------------------*/
+
+.nav {
+  background-color: rgb(245, 245, 245);
+  width: 240px;
+  height: 100%;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  z-index: 1;
+}
+
+.nav .nav-section {
+  margin-top: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgb(17, 17, 17);
+  width: 100%;
+  padding: 10px 0 10px 0;
+  display: block;
+  font-size: 16px;
+}
+
+.nav a.selected {
+  font-weight: 500;
+}
+
+.nav a:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.nav a span {
+ vertical-align: middle;
+}
+.nav a i {
+  margin-right: 30px;
+  margin-left: 30px;
+  color: #888888;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.nav a.selected i {
+  color: #14E3FF;
+}
+
+/*--------------------------*\
+      content
+\*--------------------------*/
+
+.content {
+  margin-top: 100px;
+  margin-left: 300px;
+}
+
+.content .featured-video-title {
+  font-size: 22px;
+  font-weight: 200;
+  color: rgba(75, 75, 75, 1);
+  margin-bottom: 10px;
+}
+
+.content .single-video-title {
+  font-size: 22px;
+  font-weight: 200;
+  color: rgba(75, 75, 75, 1);
+  margin: 10px 0;
+}
+
+.content .video-element {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.content a.live-video-page-link .video-element {
+  color: rgb(45, 45, 45);
+  text-decoration: none;
+}
+
+.content a.live-video-page-link .video-element .live-status {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.content a.live-video-page-link  .video-element .live-status i {
+  color: #FF0000;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.chart-container {
+  width: 700px;
+  height: 500px;
+}
