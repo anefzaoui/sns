@@ -19,6 +19,8 @@ Where it shows the video scaled up in size.
 
 The SPA is built with ReactJS framework, but has additional JavaScript code for modularity purposes.
 
+For the charts I used Chartistic.JS which seemed like it has the most straightforward API in terms of building simple Pie and Bars charts.
+
 The JavaScript code is mostly written using the ES6 specifications, and Babel is used to compile it down to JavaScript that browsers understand.
 
 The React and modules code resides in `src/app/`.
@@ -51,11 +53,11 @@ If you want the code to be minified and use production version of React instead 
 
 ![Screenshot 1](screenshots/1.png)
 
-![Screenshot 1](screenshots/3.png)
+![Screenshot 2](screenshots/2.png)
 
-![Screenshot 1](screenshots/3.png)
+![Screenshot 3](screenshots/3.png)
 
-![Screenshot 1](screenshots/4.png)
+![Screenshot 4](screenshots/4.png)
 
 
 ## Challenges
