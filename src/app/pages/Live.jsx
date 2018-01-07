@@ -13,7 +13,7 @@ export default class Live extends React.Component {
 
     let streamComponents = streamList.map(function(s, i) {
       console.log('s: ' + s);
-      return <LiveVideo key={i} id={'idstr' + i} liveurl={s} />
+      return <LiveVideo key={i} id={'idstream' + i} liveurl={s} />
     })
 
     console.log('streamComponents:');
