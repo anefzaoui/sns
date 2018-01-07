@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Layout from './pages/Layout';
 import Live from './pages/Live';
 import Statistics from './pages/Statistics';
-import SingleLive from './pages/SingleLive.jsx'
+import SingleLive from './pages/SingleLive';
 
 
 const app = document.getElementById('app');

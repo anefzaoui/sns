@@ -1,21 +1,23 @@
+/**
+ * Class containing functions to make it easier to deal with JSON.
+ * ES6 makes it quite easy already but ideally we'd want to put the
+ * repeatable tasks into resuable modules, hence JsonParser.
+ * @type {String}
+ */
 export default class JSONParser {
   constructor() {
+    /**
+     * Base URL for all the JSON files.
+     * Ideally in a production environment they would be
+     * In a server so we only have to proide an HTTPS URL.
+     */
     this.BASE_URL = '../../public/assets/JSON/';
-    this.files = [
-      'audience.json',
-      'bandwidth.json',
-      'country.json',
-      'isp.json',
-      'platform.json',
-      'streams.json',
-      'usage.json'
-    ];
   }
 
   /**
-   * Loads a single json file, and provides data within a callback function.
-   * @param  {String}   file JSON file.
-   * @param  {Function} done Callback function for JSON data.
+   * Loads a single json file, and paasses data to a callback function.
+   * @param  {String}   file JSON file path.
+   * @param  {Function} done Callback function for JSON data recieved.
    */
   loadJSONFile(file, done) {
     fetch(file).then(function(response) {

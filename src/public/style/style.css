@@ -137,6 +137,17 @@ body {
   margin-left: 300px;
 }
 
+.content .large-video-container {
+  width: 640px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05);
+}
+.content .large-video-container .large-video-subtitle {
+  color: #365899;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 20px;
+}
+
 .content .featured-video-title {
   font-size: 22px;
   font-weight: 200;
@@ -174,6 +185,21 @@ body {
 }
 
 .chart-container {
+  margin: 20px 10px;
+}
+
+.chart-title {
+  font-size: 16px;
+  color: rgb(45, 45, 45);
+  margin-bottom: 10px;
+}
+.chart-body {
   width: 700px;
   height: 500px;
+  margin-bottom: 20px;
+}
+
+.platformchart-trafficPercentage .ct-label {
+  font-size: 13px;
+  color: white;
 }

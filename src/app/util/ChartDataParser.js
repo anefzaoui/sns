@@ -1,60 +1,114 @@
 import JSONParser from './JSONParser.js';
+import Misc from './misc.js';
 
 export default class ChartDataParser {
   constructor() {
-
+    /**
+     * Initializing a new instance of JsonParser class
+     * to use its functions.
+     */
+    this.jsonParser = new JSONParser();
   }
 
+  /**
+   * Uses ChartisticJS API to parse data recovered from JSON file 'platform.js'
+   * to render sent and recieved bandwidth of both CDN and P2P into a bar chat.
+   */
   bandwidthPlatformChart() {
-    new Chartist.Bar('.platformchart-1', {
-      labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
-      series: [
-        [5, 4, 3, 7],
-        [3, 2, 9, 5],
-        [1, 5, 8, 4],
-        [2, 3, 4, 6],
-        [4, 1, 2, 1]
-      ]
-    }, {
-      // Default mobile configuration
-      stackBars: true,
-      axisX: {
-        labelInterpolationFnc: function(value) {
-          return value.split(/\s+/).map(function(word) {
-            return word[0];
-          }).join('');
-        }
-      },
-      axisY: {
-        offset: 20
+    this.jsonParser.loadJSONFile(this.jsonParser.BASE_URL + 'platform.json', constructChart);
+
+    /**
+     * Function that renders the chart using data passed from previously
+     * loaded JSON data.
+     * @param  {Object} data Data pulled from 'platform.json'
+     */
+    function constructChart(data) {
+      // Initializing Misc class and assigning the conversion function.
+      let convertBytes = new Misc().convertBytes();
+
+      /**
+       * Set of arrays to be passed into Chartistic chart creation function.
+       */
+      let platformNameList = [];
+      let platformCDN = [];
+      let platformP2P = [];
+      let platformTotal = [];
+      let platformUpload = [];
+      let platformChartStats = []
+
+      for (let i = 0; i < data.length; i++) {
+        platformNameList.push(data[i].platform);
+        platformCDN.push(data[i].cdn);
+        platformP2P.push(data[i].p2p);
+        platformTotal.push(data[i].total);
+        platformUpload.push(data[i].upload);
       }
-    }, [
-      // Options override for media > 400px
-      ['screen and (min-width: 400px)', {
-        reverseData: true,
-        horizontalBars: true,
+
+      platformChartStats.push(platformCDN, platformP2P, platformTotal, platformUpload);
+      console.log(platformChartStats);
+
+      let aData = {
+        labels: platformNameList,
+        series: platformChartStats
+      };
+
+      let options = {
+        seriesBarDistance: 10,
         axisX: {
-          labelInterpolationFnc: Chartist.noop
+          offset: 60
         },
         axisY: {
-          offset: 60
+          offset: 80,
+          labelInterpolationFnc: function(value) {
+            return value + ' KB'
+          },
+          scaleMinSpace: 15
         }
-      }],
-      // Options override for media > 800px
-      ['screen and (min-width: 800px)', {
-        stackBars: false,
-        seriesBarDistance: 10
-      }],
-      // Options override for media > 1000px
-      ['screen and (min-width: 1000px)', {
-        reverseData: false,
-        horizontalBars: false,
-        seriesBarDistance: 15
-      }]
-    ]);
+      };
+      new Chartist.Bar('.platformchart-bandwidth', aData, options);
+    }
   }
 
-  viewersPlatformChart() {
-    
+  /**
+   * Uses ChartisticJS API to parse data recovered from JSON file 'platform.js'
+   * to render a pie chart representing traffic percentage.
+   */
+  trafficPercentagePlatformChart() {
+    this.jsonParser.loadJSONFile(this.jsonParser.BASE_URL + 'platform.json', constructChart);
+
+    /**
+     * Function that renders the chart using data passed from previously
+     * loaded JSON data.
+     * @param  {Object} data Data pulled from 'platform.json'
+     */
+    function constructChart(data) {
+
+      /**
+       * Set of arrays to be passed into Chartistic chart creation function.
+       */
+      let platformNameList = [];
+      let platformTrafficPercentage = []
+
+      for (let i = 0; i < data.length; i++) {
+        platformNameList.push(data[i].platform);
+        platformTrafficPercentage.push(data[i].cdn);
+      }
+
+      let sum = function(a, b) {
+        return a + b
+      };
+
+      let aData = {
+        labels: platformNameList,
+        series: platformTrafficPercentage
+      };
+
+      let options = {
+        labelInterpolationFnc: function(value) {
+          return value;
+        }
+      };
+      new Chartist.Pie('.platformchart-trafficPercentage', aData, options);
+    }
   }
 }
