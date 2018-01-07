@@ -84,3 +84,8 @@ This includes: the video player used (Clappr) sometimes does not recognize the l
 - Testing. The SPA once decided it should go to production, it would definitely make use of functional, integration, and Unit tests.
 
 - Debug mode for logs to be excluded from the bundled file once we decide to build for production.
+
+## Why React (just for fun 🙂)?
+[![What you really really want?](https://img.youtube.com/vi/Ze4ep7YMAn8/0.jpg)](https://www.youtube.com/watch?v=Ze4ep7YMAn8)
+
+For reference, people in the video are Twitter's @eveporcello @peggyrayzis @okbel @samerbuna @mxstbr @_jayphelps @ken_wheeler @iam_preethi
