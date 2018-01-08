@@ -16,15 +16,15 @@ export default class LiveVideo extends React.Component {
     let videoDiv = document.getElementById(this.props.id);
     let player = new Clappr.Player({
       source: self.props.liveurl,
-      height: 150,
-      width: 240
+      height: 360,
+      width: 640
     });
     player.attachTo(videoDiv);
   }
 
   render() {
     return (
-      <Link className="live-video-page-link" to={"/live/watch?v=" + this.props.liveurl}>
+      <Link className="lv-large live-video-page-link" to={"/live/watch?v=" + this.props.liveurl}>
         <div className="video-element">
           <div id={this.props.id}></div>
           <div className="live-status">

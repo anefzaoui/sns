@@ -54,6 +54,7 @@ body {
 /*--------------------------*\
       header
 \*--------------------------*/
+
 .header {
   width: 100%;
   height: 56px;
@@ -75,8 +76,7 @@ body {
   margin-left: 30px;
 }
 
-.header .logo span {
-}
+.header .logo span {}
 
 /*--------------------------*\
       nav
@@ -114,8 +114,9 @@ body {
 }
 
 .nav a span {
- vertical-align: middle;
+  vertical-align: middle;
 }
+
 .nav a i {
   margin-right: 30px;
   margin-left: 30px;
@@ -141,11 +142,12 @@ body {
   width: 640px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05);
 }
+
 .content .large-video-container .large-video-subtitle {
   color: #365899;
   cursor: pointer;
-  font-size: 18px;
-  padding: 20px;
+  font-size: 16px;
+  padding: 0 20px 20px;
 }
 
 .content .featured-video-title {
@@ -165,7 +167,7 @@ body {
 .content .video-element {
   display: inline-block;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .content a.live-video-page-link .video-element {
@@ -173,12 +175,21 @@ body {
   text-decoration: none;
 }
 
+.content a.lv-large .video-element .live-status {
+  font-size: 16px;
+  margin-top: 10px;
+  padding-left: 20px !important;
+  padding-bottom: 0 !important;
+}
+
 .content a.live-video-page-link .video-element .live-status {
   font-size: 16px;
   margin-top: 10px;
+  padding-left: 0;
+  padding-bottom: 20px;
 }
 
-.content a.live-video-page-link  .video-element .live-status i {
+.content a.live-video-page-link .video-element .live-status i {
   color: #FF0000;
   font-size: 16px;
   margin-right: 5px;
@@ -193,6 +204,7 @@ body {
   color: rgb(45, 45, 45);
   margin-bottom: 10px;
 }
+
 .chart-body {
   width: 700px;
   height: 500px;

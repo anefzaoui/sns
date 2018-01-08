@@ -35,8 +35,6 @@ The data used in both rendering livestreams and building charts resides in `src/
 
 We use WebPack to bundle all the code into one file `bundle.js` that is later imported with a script tag into the web page.
 
-For production, code is not minified. is added into the WebPack config file so when the browser devtools propmt an error or a log, developer can debug right through the original files `app.js` and `HComment.js` instead of the final bundle.
-
 ## Try it out
 
 To try the demo in this nodejs app:
