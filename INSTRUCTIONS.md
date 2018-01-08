@@ -17,7 +17,12 @@ Where it shows the video scaled up in size.
 
 ## Code
 
-The SPA is built with ReactJS framework, but has additional JavaScript code for modularity purposes.
+The SPA's structure consists of two main folders:
+
+1. `src/app`: the code directory.
+2. `src/public`: the build directory.
+
+The SPA is built with ReactJS framework, but has additional ES6 code for modularity purposes.
 
 For the charts I used Chartistic.JS which seemed like it has the most straightforward API in terms of building simple Pie and Bars charts.
 
