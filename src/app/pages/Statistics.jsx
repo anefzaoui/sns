@@ -10,7 +10,6 @@ export default class Statistics extends React.Component {
 
   }
   render() {
-    console.log("stats");
     return (
       <div>
         <Chart title="Platform Bandwidth" chartClass="platformchart-bandwidth"/>

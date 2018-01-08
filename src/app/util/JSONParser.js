@@ -22,6 +22,8 @@ export default class JSONParser {
   loadJSONFile(file, done) {
     fetch(file).then(function(response) {
       if (response.status !== 200) {
+        // Didn't remove those two console.log() as they are necessary to gracefully
+        // throwing errors for JSON files.
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }

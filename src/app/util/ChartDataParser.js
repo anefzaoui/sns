@@ -45,7 +45,6 @@ export default class ChartDataParser {
       }
 
       platformChartStats.push(platformCDN, platformP2P, platformTotal, platformUpload);
-      console.log(platformChartStats);
 
       let aData = {
         labels: platformNameList,

@@ -28,7 +28,6 @@ export default class StreamsParser {
           self.streamsList.push(res[i].manifest);
         }
       }
-      console.log(self.streamsList);
     }
     return this.streamsList;
   }
